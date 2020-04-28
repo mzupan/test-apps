@@ -1,0 +1,19 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: prod-podinfo
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:*-prod
+spec:
+  releaseName: prod-podinfo
+  chart:
+    git: https://github.com/stefanprodan/podinfo.git
+    path: charts/podinfo
+    ref: master
+  values:
+    image:
+      repository: mzupan/podinfo
+      tag: 3.2.0-prod
