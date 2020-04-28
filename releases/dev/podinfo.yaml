@@ -16,4 +16,4 @@ spec:
   values:
     image:
       repository: mzupan/podinfo
-      tag: 3.2.1-dev
+      tag: 3.2.0-dev
